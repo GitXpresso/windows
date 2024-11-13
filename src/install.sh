@@ -11,8 +11,8 @@ skipInstall() {
 
   local iso="$1"
   local magic byte
-  local boot="$STORAGE/windows.boot"
-  local previous="$STORAGE/windows.base"
+  local boot="$STORAGE/mint.boot"
+  local previous="$STORAGE/linux.base"
 
   if [ -f "$previous" ]; then
     previous=$(<"$previous")
@@ -181,7 +181,7 @@ abortInstall() {
   efi=$(find "$dir" -maxdepth 1 -type d -iname efi | head -n 1)
 
   if [ -z "$efi" ]; then
-    [[ "${PLATFORM,,}" == "x64" ]] && BOOT_MODE="windows_legacy"
+    [[ "${PLATFORM,,}" == "x64" ]] && BOOT_MODE="nomodeset"
   fi
 
   if [ -n "$CUSTOM" ]; then
