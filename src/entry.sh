@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-: "${BOOT_MODE:="windows"}"
+: "${BOOT_MODE:="mint"}"
 
-APP="Windows"
-SUPPORT="https://github.com/dockur/windows"
+APP="Mint"
+SUPPORT="https://github.com/gitxpresso/windows"
 
 cd /run
 
